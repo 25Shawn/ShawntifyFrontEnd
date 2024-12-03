@@ -18,10 +18,11 @@ const Header = () => {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    setUserName("");  // Réinitialiser le nom d'utilisateur lors de la déconnexion
+    setUserName("");
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('userName');
     localStorage.removeItem('id');
+    window.location.reload();
   };
 
   const handleCloseLoginForm = () => {
@@ -112,6 +113,7 @@ const Header = () => {
           </div>
         ) : (
           <button className="boutonConnexion login-btn" onClick={handleLogin}>Connexion</button>
+          
         )}
       </div>
 

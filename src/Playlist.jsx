@@ -15,7 +15,7 @@ const Playlist = () => {
   // Charger les playlists
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8080/playlist?id_user=${localStorage.getItem("id")}`) // Remplacez par l'URL de votre API
+      .get(`https://apirustshawntify.onrender.com/playlist?id_user=${localStorage.getItem("id")}`) // Remplacez par l'URL de votre API
       .then((response) => {
         setPlaylists(response.data);
       })
@@ -36,7 +36,7 @@ const Playlist = () => {
     
 
     axios
-      .post("http://127.0.0.1:8080/addPlaylist", { nom_playlist: newPlaylistName, id_createur: id }) 
+      .post("https://apirustshawntify.onrender.com/addPlaylist", { nom_playlist: newPlaylistName, id_createur: id }) 
       .then((response) => {
         console.log(response.data);
         setPlaylists([...playlists, response.data]);
@@ -58,7 +58,7 @@ const Playlist = () => {
     }
 
     axios
-      .get(`http://127.0.0.1:8080/musiquePlaylist/${playlistId}`) // Remplacez par l'URL de votre API
+      .get(`https://apirustshawntify.onrender.com/musiquePlaylist/${playlistId}`) // Remplacez par l'URL de votre API
       .then((response) => {
         setExpandedPlaylist(playlistId);
         setMusics(response.data);
@@ -84,7 +84,7 @@ const Playlist = () => {
       
       // Une fois la musique ajoutée, charger les musiques à jour pour la playlist
       axios
-        .get(`http://127.0.0.1:8080/musiquePlaylist/${newPlaylistId}`)
+        .get(`https://apirustshawntify.onrender.com/musiquePlaylist/${newPlaylistId}`)
         .then((response) => {
           setMusics(response.data);
           window.location.reload();
@@ -110,7 +110,7 @@ const Playlist = () => {
 
     try {
       axios
-        .post(`http://127.0.0.1:8080/removeMusiqueFromPlaylist`, data)
+        .post(`https://apirustshawntify.onrender.com/removeMusiqueFromPlaylist`, data)
         .then((response) => {
           console.log(response.data);
           handleExpandPlaylist(expandedPlaylist);
@@ -126,7 +126,7 @@ const Playlist = () => {
   const handleDeletePlaylist = async (playlistId) => {
     try {
       axios
-        .delete(`http://127.0.0.1:8080/supprimerPlaylist/${playlistId}`)
+        .delete(`https://apirustshawntify.onrender.com/supprimerPlaylist/${playlistId}`)
         .then((response) => {
           console.log(response.data);
           setPlaylists(playlists.filter((playlist) => playlist.id !== playlistId));
@@ -191,7 +191,7 @@ const Playlist = () => {
 
                       <img
                         className="imageplaylist"
-                        src={`http://127.0.0.1:8080/images/${music.image}`}
+                        src={`https://apirustshawntify.onrender.com/images/${music.image}`}
                         alt=""
                       />
                       <span className="music-uuid">{music.uuid}</span>
@@ -199,7 +199,7 @@ const Playlist = () => {
                       {/* Lecture du fichier audio en utilisant l'UUID */}
                       <audio className="audio-player" controls>
                         <source
-                          src={`http://127.0.0.1:8080/musiques/${music.uuid}`}
+                          src={`https://apirustshawntify.onrender.com/musiques/${music.uuid}`}
                           type="audio/mp3"
                         />
                         Votre navigateur ne supporte pas l'élément audio.

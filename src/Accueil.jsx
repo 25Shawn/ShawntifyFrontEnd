@@ -25,7 +25,7 @@ const Accueil = () => {
     if (id_int) {
       setLoading(true); // Début du chargement
       axios
-        .get(`http://127.0.0.1:8080/playlist?id_user=${id_int}`, {
+        .get(`https://apirustshawntify.onrender.com/playlist?id_user=${id_int}`, {
           headers: {
             'Content-Type': 'application/json',
           },

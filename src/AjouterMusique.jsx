@@ -20,7 +20,7 @@ const AjouterMusique = () => {
 
   const fetchMusiques = async () => {
     axios
-    .get("http://127.0.0.1:8080/musiques")
+    .get("https://apirustshawntify.onrender.com/musiques")
     .then((response) => {
       setMusiques(response.data);
       //console.log(response.data);
@@ -51,8 +51,8 @@ const AjouterMusique = () => {
     console.log(imageFile);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8080/addMusique", formData);
-      setMessage(`Musique ajoutée avec succès: ${response.data.message}`);
+      const response = await axios.post("https://apirustshawntify.onrender.com/addMusique", formData);
+      setMessage(`Musique ajoutée avec succès`);
       setAudioFile(null);
       setImageFile(null);
       setTimeout(() => {
@@ -67,7 +67,7 @@ const AjouterMusique = () => {
 
   const handleDelete = async (uuid) => {
     try {
-      await axios.delete(`http://127.0.0.1:8080/supprimer/${uuid}`);
+      await axios.delete(`https://apirustshawntify.onrender.com/supprimer/${uuid}`);
       setMessage(`Musique supprimée avec succès.`);
       setTimeout(() => {
         setMessage("");

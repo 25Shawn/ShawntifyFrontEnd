@@ -13,7 +13,7 @@ const FormulaireSignin = ({ onClose, setUser }) => {
   // Connexion utilisateur
   const handleLogin = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8080/user?nom_utilisateur=${username}&mots_passe=${password}`, {
+      const response = await axios.get(`https://apirustshawntify.onrender.com/user?nom_utilisateur=${username}&mots_passe=${password}`, {
         headers: { 'Content-Type': 'application/json' },
       });
 
@@ -36,7 +36,7 @@ const FormulaireSignin = ({ onClose, setUser }) => {
         return;
       }
 
-      const response = await axios.post('http://127.0.0.1:8080/addUser', { nom_utilisateur: username, mots_passe: password });
+      const response = await axios.post('https://apirustshawntify.onrender.com/addUser', { nom_utilisateur: username, mots_passe: password });
       console.log('Sign-up successful:', response.data);
 
       // Une fois l'inscription réussie, fermez le formulaire

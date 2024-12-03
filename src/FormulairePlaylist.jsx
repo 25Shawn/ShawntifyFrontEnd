@@ -10,7 +10,7 @@ function PlaylistForm({ playlistId }) {
   // Fonction pour récupérer toutes les musiques disponibles dans la base de données
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8080/musiques") // Remplacez par l'URL de votre API
+      .get("https://apirustshawntify.onrender.com/musiques") // Remplacez par l'URL de votre API
       .then((response) => {
         setMusiques(response.data);
       })
@@ -18,14 +18,13 @@ function PlaylistForm({ playlistId }) {
         console.error("Erreur lors du chargement des playlists :", error);
       });
   }, []);
-  console.log(typeof playlistId);
-  console.log(typeof selectedMusicId + "sadada");
+
 
   // Fonction pour gérer l'ajout de la musique à la playlist
   const handleAddMusic = async () => {
     try {
       axios
-        .post("http://127.0.0.1:8080/addMusiqueToPlaylist", {
+        .post("https://apirustshawntify.onrender.com/addMusiqueToPlaylist", {
             id_musique: parseInt(selectedMusicId),
             id_playlist: playlistId
         })
