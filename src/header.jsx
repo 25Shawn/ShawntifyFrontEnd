@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FormulaireConnexion from './FormulaireConnexion';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -72,13 +73,13 @@ const Header = () => {
           </a>
         </li>
         <li className="nav-item">
-          <a
+          <Link
             className={`nav-link ${estActif === 'playlist' ? 'active' : ''}`}
-            href="/playlist"
+            to="/playlist"
             onClick={() => handleActif('playlist')}
           >
             <span className="icon"></span> Playlists
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
           <a
