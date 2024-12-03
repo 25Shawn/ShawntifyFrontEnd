@@ -1,0 +1,121 @@
+.playlist{
+ 
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: start;
+    box-shadow: 3px 2px 0px #434343;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 10px;
+}
+
+
+.form-select{
+    width: 300px;
+    padding: 5px;
+    
+}
+.boutonAjouterMusique{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #fff; 
+    color: #1db954;
+    margin: 10px;
+}
+
+.musiquelister {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .musiquelister:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+  }
+  
+  .imageplaylist {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  .music-uuid {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .audio-player {
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+  .music-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    max-height: 300px;
+  }
+
+.playlist-input{
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.playlist-button{
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-container-supprimer{
+  width: fit-content;
+  margin: 10px;
+}
+
+.playlist-button-supprimer{
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  width: 70px;
+}
+
+.playlist-button:hover{
+  background-color: #45a049;
+}
+
+.playlist-form{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 10px;
+}
+
+.playlist-label{
+  margin-bottom: 5px;
+}
+
