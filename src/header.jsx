@@ -56,7 +56,7 @@ const Header = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img src="./src/assets/image/logoSpotify.png" alt="logo" />
+        <img src="assets/image/logoSpotify.png" alt="logo" />
         <span>Shawntify</span>
       </div>
 
