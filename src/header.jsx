@@ -64,13 +64,13 @@ const Header = () => {
 
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a
+          <Link
             className={`nav-link ${estActif === 'Accueil' ? 'active' : ''}`}
-            href="/"
+            to="/"
             onClick={() => handleActif("Accueil")}
           >
             <span className="icon"></span> Accueil
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
           <Link
@@ -82,22 +82,22 @@ const Header = () => {
           </Link>
         </li>
         <li className="nav-item">
-          <a
+          <Link
             className={`nav-link ${estActif === 'AjouterMusique' ? 'active' : ''}`}
-            href="/AjouterMusique"
+            to="/AjouterMusique"
             onClick={() => handleActif('AjouterMusique')}
           >
             <span className="icon"></span> Ajouter une musique
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a
+          <Link
             className={`nav-link ${estActif === 'Apropos' ? 'active' : ''}`}
-            href="/Apropos"
+            to="/Apropos"
             onClick={() => handleActif('Apropos')}
           >
             <span className="icon"></span> À propos
-          </a>
+          </Link>
         </li>
       </ul>
 
